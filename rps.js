@@ -15,29 +15,51 @@ const game = function() {
         let computerScore = 0;
 
         if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
+
             console.log("Game tied! Play again.")
+
         }
 
         if (playerSelection.toLowerCase() === 'rock' && computerSelection.toLowerCase() === 'scissors') {
+
             playerScore += 1;
 
             console.log(`Rock beats scissors, the score is ${playerScore}-${computerScore} to the player.`);
+
         } else if (computerSelection.toLowerCase() === 'rock' && playerSelection.toLowerCase() === 'scissors') {
+
             computerScore += 1;
 
             console.log(`Rock beats scissors, the score is ${playerScore}-${computerScore} to the player.`);
+
         }
 
         if (playerSelection.toLowerCase() === 'paper' && computerSelection.toLowerCase() === 'rock') {
-            console.log("Paper beats rock, the score is 1-0 to player.");
+
+            playerScore += 1;
+
+            console.log(`Paper beats rock, the score is ${playerScore}-${computerScore} to player.`);
+
         } else if (computerSelection.toLowerCase() === 'paper' && playerSelection.toLowerCase() === 'rock') {
-            console.log("Paper beats rock, the score is 0-1 to the computer.");
+
+            computerScore += 1;
+
+            console.log(`Paper beats rock, the score is ${playerScore}-${computerScore} to the computer.`);
+
         }
 
         if (playerSelection.toLowerCase() === 'scissors' && computerSelection.toLowerCase() === 'paper') {
-            console.log("Scissors beats paper, the score is 1-0 to player.");
+
+            playerScore += 1;
+
+            console.log(`Scissors beats paper, the score is ${playerScore}-${computerScore} to player.`);
+
         } else if (computerSelection.toLowerCase() === 'scissors' && playerSelection.toLowerCase() === 'paper') {
-            console.log("Scissors beats paper, the score is 0-1 to the computer.");
+
+            computerScore += 1;
+
+            console.log(`Scissors beats paper, the score is ${playerScore}-${computerScore} to the computer.`);
+
         }
 
         if (playerScore === 3) {
