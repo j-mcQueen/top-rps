@@ -1,0 +1,1 @@
+A simple game of rock paper scissors. This small project was made to test my problem solving and JavaScript skills, and only operates in the console.
