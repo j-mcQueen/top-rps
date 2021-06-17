@@ -7,10 +7,10 @@ const game = function() {
         const computerPlay = function() {
             let choices = ["Rock", "Paper", "Scissors"];
     
-            return choices[Math.floor(Math.random() * choices.length)];
+            return choices[Math.floor(Math.random() * choices.length)]; // Finds and returns the value of a random array item
         }
     
-        const playerSelection = prompt("Choose between Rock, Paper and Scissors:", "").toLowerCase();
+        const playerSelection = prompt("Choose between Rock, Paper and Scissors:", "").toLowerCase(); // Ensures case insensitivity of user input
         const computerSelection = computerPlay();
     
         const playRound = function(playerSelection, computerSelection) {    
@@ -61,7 +61,7 @@ const game = function() {
             console.log("Computer has reached 3 points, computer wins. Unlucky! Refresh to play again.");
             break;
         } else if ((i >= 3) && (playerScore >= 0 && playerScore <= 2) && (computerScore >= 0 && computerScore <= 2)) {
-            console.log("Game over. No winner can be decided within 5 games. Refresh to play again!")
+            console.log("Game over. No winner can be decided within 5 games. Refresh to play again!");
             break;
         }
     }
