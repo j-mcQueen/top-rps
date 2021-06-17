@@ -62,7 +62,7 @@ const game = function() {
             break;
         } else if ((i >= 3) && (playerScore >= 0 && playerScore <= 2) && (computerScore >= 0 && computerScore <= 2)) {
             console.log("Game over. No winner can be decided within 5 games. Refresh to play again!");
-            break;
+            break; // A conditional that covers situations where many rounds have been tied.
         }
     }
 }
