@@ -1,0 +1,37 @@
+html {
+    background-color: black;
+}
+
+h1, h2, p {
+    color: white;
+    text-align: center;
+}
+
+#opening {
+    text-align: center;
+}
+
+#game {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+button {
+    padding: 50px;
+}
+
+#player-options {
+    grid-column: 1;
+    justify-self: end;
+}
+
+#results {
+    grid-column: 2;
+    justify-self: center;
+}
+
+#computer-options {
+    grid-column: 3;
+    justify-self: start;
+}
