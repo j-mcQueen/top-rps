@@ -1,70 +1,99 @@
-const game = function() {
-    let playerScore = 0;
-    let computerScore = 0;
+// const game = function() {
+//     let playerScore = 0;
+//     let computerScore = 0;
 
-    let i = 0;
-    for (i = 0; i < 5; i++) {
-        const computerPlay = function() {
-            let choices = ["Rock", "Paper", "Scissors"];
+//     let i = 0;
+//     for (i = 0; i < 5; i++) {
+//         const computerPlay = function() {
+//             let choices = ["Rock", "Paper", "Scissors"];
     
-            return choices[Math.floor(Math.random() * choices.length)]; // Finds and returns the value of a random array item
-        }
-    
-        const playerSelection = prompt("Choose between Rock, Paper and Scissors:", "").toLowerCase(); // Ensures case insensitivity of user input
-        const computerSelection = computerPlay();
-    
-        const playRound = function(playerSelection, computerSelection) {    
-            if (playerSelection === 'rock' && computerSelection === 'Scissors') {
-                playerScore += 1;
-    
-                console.log(`Rock beats scissors, the score is ${playerScore}-${computerScore} to the player.`);
-            } else if (computerSelection === 'Rock' && playerSelection === 'scissors') {
-                computerScore += 1;
-    
-                console.log(`Rock beats scissors, the score is ${playerScore}-${computerScore} to the computer.`);
-            }
-    
-            if (playerSelection === 'paper' && computerSelection === 'Rock') {
-                playerScore += 1;
-    
-                console.log(`Paper beats rock, the score is ${playerScore}-${computerScore} to player.`);
-            } else if (computerSelection === 'Paper' && playerSelection === 'rock') {
-                computerScore += 1;
-    
-                console.log(`Paper beats rock, the score is ${playerScore}-${computerScore} to the computer.`);
-            }
-    
-            if (playerSelection === 'scissors' && computerSelection === 'Paper') {
-                playerScore += 1;
-    
-                console.log(`Scissors beats paper, the score is ${playerScore}-${computerScore} to player.`);
-            } else if (computerSelection === 'Scissors' && playerSelection === 'paper') {
-                computerScore += 1;
-    
-                console.log(`Scissors beats paper, the score is ${playerScore}-${computerScore} to the computer.`);
-            }
-    
-            if (
-                (playerSelection === 'rock' && computerSelection === 'Rock') ||
-                (playerSelection === 'paper' && computerSelection === 'Paper') || 
-                (playerSelection === 'scissors' && computerSelection === 'Scissors')) {
-                console.log("Round tied! Play again.");
-            }
-        }
+//             return choices[Math.floor(Math.random() * choices.length)]; // Finds and returns the value of a random array item
+//         }
 
-        console.log(playRound(playerSelection, computerSelection));
+        // const playerSelection = prompt("Choose between rock, paper and scissors:").toLowerCase();
+        // const computerSelection = computerPlay();
+    
+        // const playRound = function(playerSelection, computerSelection) {
 
-        if (playerScore === 3) {
-            console.log("Player has reached 3 points, player wins! Refresh to play again.");
-            break;
-        } else if  (computerScore === 3) {
-            console.log("Computer has reached 3 points, computer wins. Unlucky! Refresh to play again.");
-            break;
-        } else if ((i >= 3) && (playerScore >= 0 && playerScore <= 2) && (computerScore >= 0 && computerScore <= 2)) {
-            console.log("Game over. No winner can be decided within 5 games. Refresh to play again!");
-            break; // A conditional that covers situations where many rounds have been tied.
-        }
-    }
-}
+        //     if (playerSelection === 'rock' && computerSelection === 'Scissors') {
+        //         playerScore += 1;
+    
+        //         console.log(`Rock beats scissors, the score is ${playerScore}-${computerScore} to the player.`);
+        //     } else if (computerSelection === 'Rock' && playerSelection === 'scissors') {
+        //         computerScore += 1;
+    
+        //         console.log(`Rock beats scissors, the score is ${playerScore}-${computerScore} to the computer.`);
+        //     }
+    
+        //     if (playerSelection === 'paper' && computerSelection === 'Rock') {
+        //         playerScore += 1;
+    
+        //         console.log(`Paper beats rock, the score is ${playerScore}-${computerScore} to player.`);
+        //     } else if (computerSelection === 'Paper' && playerSelection === 'rock') {
+        //         computerScore += 1;
+    
+        //         console.log(`Paper beats rock, the score is ${playerScore}-${computerScore} to the computer.`);
+        //     }
+    
+        //     if (playerSelection === 'scissors' && computerSelection === 'Paper') {
+        //         playerScore += 1;
+    
+        //         console.log(`Scissors beats paper, the score is ${playerScore}-${computerScore} to player.`);
+        //     } else if (computerSelection === 'Scissors' && playerSelection === 'paper') {
+        //         computerScore += 1;
+    
+        //         console.log(`Scissors beats paper, the score is ${playerScore}-${computerScore} to the computer.`);
+        //     }
+    
+        //     if (
+        //         (playerSelection === 'rock' && computerSelection === 'Rock') ||
+        //         (playerSelection === 'paper' && computerSelection === 'Paper') || 
+        //         (playerSelection === 'scissors' && computerSelection === 'Scissors')) {
+        //         console.log("Round tied! Play again.");
+        //     }
+        // }
 
-game();
+        // const btn = document.querySelector(".player-buttons")
+        // const buttons = document.querySelectorAll(".player-buttons");
+
+        // playerButtons.forEach(btn => btn.addEventListener("click", function() {
+        //     const computerPlay = function() {
+        //         let choices = ["Rock", "Paper", "Scissors"];
+
+        //         return choices[Math.floor(Math.random() * choices.length)];
+        //     }
+
+        //     const computerSelection = computerPlay();
+        //     const playerSelection = btn;
+
+        //     playRound(playerSelection, computerSelection);
+        // }));
+
+        // console.log(playRound(playerSelection, computerSelection));
+
+        // if (playerScore === 3) {
+        //     console.log("Player has reached 3 points, player wins! Refresh to play again.");
+        //     break;
+        // } else if  (computerScore === 3) {
+        //     console.log("Computer has reached 3 points, computer wins. Unlucky! Refresh to play again.");
+        //     break;
+        // } else if ((i >= 3) && (playerScore >= 0 && playerScore <= 2) && (computerScore >= 0 && computerScore <= 2)) {
+        //     console.log("Game over. No winner can be decided within 5 games. Refresh to play again!");
+        //     break; // A conditional that covers situations where many rounds have been tied.
+        // }
+//     }
+// }
+
+// game();
+
+// On click, store player choice in a variable and highlight choice
+// Then, run function which calculates computer choice.
+// Highlight computer choice and run a set of conditionals to check who wins the round
+// Create p element and add it to the div which displays the result of each round
+// First player to reach 3 points wins, ties result in a restart of the round
+
+// When a button is clicked, how do I get the computer to register that the button that was clicked is equal to playerSelection?
+
+    // select all buttons, producing an array
+    // loop through the array and attach a click event listener to each array item (button) using forEach
+    // 
