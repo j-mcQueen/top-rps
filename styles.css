@@ -19,6 +19,16 @@ h1, h2, p {
 
 button {
     padding: 50px;
+    background-color: inherit;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid white;
+    font-size: inherit;
+}
+
+#player-options button:hover {
+    background-color: green;
+    transition: 0.25s;
 }
 
 #player-options {
