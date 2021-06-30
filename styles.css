@@ -29,6 +29,7 @@ button {
 #player-options button:hover {
     background-color: green;
     transition: 0.25s;
+    cursor: pointer;
 }
 
 #player-options {
