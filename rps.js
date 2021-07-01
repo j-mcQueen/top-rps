@@ -62,9 +62,9 @@ const playRound = function(playerSelection, computerSelection) {
         }
 
         if (
-        (playerSelection.getAttribute("id") === "player-rock" && computerSelection === "Rock") ||
-        (playerSelection.getAttribute("id") === "player-paper" && computerSelection === "Paper") || 
-        (playerSelection.getAttribute("id") === "player-scissors" && computerSelection === "Scissors")) {
+        (playerSelection.getAttribute("id") === "Rock" && computerSelection === "Rock") ||
+        (playerSelection.getAttribute("id") === "Paper" && computerSelection === "Paper") || 
+        (playerSelection.getAttribute("id") === "Scissors" && computerSelection === "Scissors")) {
                 tied();
         }
 
