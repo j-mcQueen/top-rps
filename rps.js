@@ -4,21 +4,13 @@ let computerScore = 0;
 const playRound = function(playerSelection, computerSelection) {
         const scoreKeeper = document.querySelector("#results");
 
-        const rockWinner = function() {
-                let newPara = document.createElement("p");
-                newPara.textContent = `Rock beats scissors, the score is ${playerScore}-${computerScore}.`;
-                scoreKeeper.appendChild(newPara);
-        }
+        const playerRock = document.querySelector("#Rock").getAttribute("id");
+        const playerPaper = document.querySelector("#Paper").getAttribute("id");
+        const playerScissors = document.querySelector("#Scissors").getAttribute("id");
 
-        const paperWinner = function() {
+        const roundWinner = function(winner, loser) {
                 let newPara = document.createElement("p");
-                newPara.textContent = `Paper beats rock, the score is ${playerScore}-${computerScore}`;
-                scoreKeeper.appendChild(newPara);
-        }
-
-        const scissorsWinner = function() {
-                let newPara = document.createElement("p");
-                newPara.textContent = `Scissors beats paper, the score is ${playerScore}-${computerScore}.`;
+                newPara.textContent = `${winner} beats ${loser}, the score is ${playerScore}-${computerScore}.`;
                 scoreKeeper.appendChild(newPara);
         }
 
@@ -28,37 +20,37 @@ const playRound = function(playerSelection, computerSelection) {
                 scoreKeeper.appendChild(newPara);
         }
 
-        if (playerSelection.getAttribute("id") === "player-rock" && computerSelection === "Scissors") {
+        if (playerSelection.getAttribute("id") === "Rock" && computerSelection === "Scissors") {
                 playerScore += 1;
 
-                rockWinner();
+                roundWinner(playerRock, computerSelection);
 
-        } else if (computerSelection === "Rock" && playerSelection.getAttribute("id") === "player-scissors") {
+        } else if (computerSelection === "Rock" && playerSelection.getAttribute("id") === "Scissors") {
                 computerScore += 1;
 
-                rockWinner();
+                roundWinner(computerSelection, playerRock);
         }
 
-        if (playerSelection.getAttribute("id") === "player-paper" && computerSelection === "Rock") {
+        if (playerSelection.getAttribute("id") === "Paper" && computerSelection === "Rock") {
                 playerScore += 1;
 
-                paperWinner();
+                roundWinner(playerPaper, computerSelection);
 
-        } else if (computerSelection === 'Paper' && playerSelection.getAttribute("id") === "player-rock") {
+        } else if (computerSelection === 'Paper' && playerSelection.getAttribute("id") === "Rock") {
                 computerScore += 1;
 
-                paperWinner();
+                roundWinner(computerSelection, playerPaper);
         }
 
-        if (playerSelection.getAttribute("id") === "player-scissors" && computerSelection === "Paper") {
+        if (playerSelection.getAttribute("id") === "Scissors" && computerSelection === "Paper") {
                 playerScore += 1;
 
-                scissorsWinner();
+                roundWinner(playerScissors, computerSelection);
 
-        } else if (computerSelection === 'Scissors' && playerSelection.getAttribute("id") === "player-paper") {
+        } else if (computerSelection === 'Scissors' && playerSelection.getAttribute("id") === "Paper") {
                 computerScore += 1;
 
-                scissorsWinner();
+                roundWinner(computerSelection, playerScissors);
         }
 
         if (
