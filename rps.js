@@ -28,7 +28,7 @@ const playRound = function(playerSelection, computerSelection) {
         } else if (computerSelection === "Rock" && playerSelection.getAttribute("id") === "Scissors") {
                 computerScore += 1;
 
-                roundWinner(computerSelection, playerRock);
+                roundWinner(computerSelection, playerScissors);
         }
 
         if (playerSelection.getAttribute("id") === "Paper" && computerSelection === "Rock") {
@@ -39,7 +39,7 @@ const playRound = function(playerSelection, computerSelection) {
         } else if (computerSelection === 'Paper' && playerSelection.getAttribute("id") === "Rock") {
                 computerScore += 1;
 
-                roundWinner(computerSelection, playerPaper);
+                roundWinner(computerSelection, playerRock);
         }
 
         if (playerSelection.getAttribute("id") === "Scissors" && computerSelection === "Paper") {
@@ -50,7 +50,7 @@ const playRound = function(playerSelection, computerSelection) {
         } else if (computerSelection === 'Scissors' && playerSelection.getAttribute("id") === "Paper") {
                 computerScore += 1;
 
-                roundWinner(computerSelection, playerScissors);
+                roundWinner(computerSelection, playerPaper);
         }
 
         if (
