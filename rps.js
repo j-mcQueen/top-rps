@@ -4,58 +4,68 @@ let computerScore = 0;
 const playRound = function(playerSelection, computerSelection) {
         const scoreKeeper = document.querySelector("#results");
 
-        if (playerSelection.getAttribute("id") === "player-rock" && computerSelection === "Scissors") {
-        playerScore += 1;
+        const rockWinner = function() {
+                let newPara = document.createElement("p");
+                newPara.textContent = `Rock beats scissors, the score is ${playerScore}-${computerScore}.`;
+                scoreKeeper.appendChild(newPara);
+        }
 
-        let newPara = document.createElement("p");
-        newPara.textContent = `Rock beats scissors, the score is ${playerScore}-${computerScore}.`;
-        scoreKeeper.appendChild(newPara);
+        const paperWinner = function() {
+                let newPara = document.createElement("p");
+                newPara.textContent = `Paper beats rock, the score is ${playerScore}-${computerScore}`;
+                scoreKeeper.appendChild(newPara);
+        }
+
+        const scissorsWinner = function() {
+                let newPara = document.createElement("p");
+                newPara.textContent = `Scissors beats paper, the score is ${playerScore}-${computerScore}.`;
+                scoreKeeper.appendChild(newPara);
+        }
+
+        const tied = function() {
+                let newPara = document.createElement("p");
+                newPara.textContent = "Round tied, pick again.";
+                scoreKeeper.appendChild(newPara);
+        }
+
+        if (playerSelection.getAttribute("id") === "player-rock" && computerSelection === "Scissors") {
+                playerScore += 1;
+
+                rockWinner();
 
         } else if (computerSelection === "Rock" && playerSelection.getAttribute("id") === "player-scissors") {
-        computerScore += 1;
+                computerScore += 1;
 
-        let newPara = document.createElement("p");
-        newPara.textContent = `Rock beats scissors, the score is ${playerScore}-${computerScore}.`;
-        scoreKeeper.appendChild(newPara);
+                rockWinner();
         }
 
         if (playerSelection.getAttribute("id") === "player-paper" && computerSelection === "Rock") {
-        playerScore += 1;
+                playerScore += 1;
 
-        let newPara = document.createElement("p");
-        newPara.textContent = `Paper beats rock, the score is ${playerScore}-${computerScore} to player.`;
-        scoreKeeper.appendChild(newPara);
+                paperWinner();
 
         } else if (computerSelection === 'Paper' && playerSelection.getAttribute("id") === "player-rock") {
-        computerScore += 1;
+                computerScore += 1;
 
-        let newPara = document.createElement("p");
-        newPara.textContent = `Paper beats rock, the score is ${playerScore}-${computerScore} to player.`;
-        scoreKeeper.appendChild(newPara);
+                paperWinner();
         }
 
         if (playerSelection.getAttribute("id") === "player-scissors" && computerSelection === "Paper") {
-        playerScore += 1;
+                playerScore += 1;
 
-        let newPara = document.createElement("p");
-        newPara.textContent = `Scissors beats paper, the score is ${playerScore}-${computerScore}.`;
-        scoreKeeper.appendChild(newPara);
+                scissorsWinner();
 
         } else if (computerSelection === 'Scissors' && playerSelection.getAttribute("id") === "player-paper") {
-        computerScore += 1;
+                computerScore += 1;
 
-        let newPara = document.createElement("p");
-        newPara.textContent = `Scissors beats paper, the score is ${playerScore}-${computerScore}.`;
-        scoreKeeper.appendChild(newPara);
+                scissorsWinner();
         }
 
         if (
         (playerSelection.getAttribute("id") === "player-rock" && computerSelection === "Rock") ||
         (playerSelection.getAttribute("id") === "player-paper" && computerSelection === "Paper") || 
         (playerSelection.getAttribute("id") === "player-scissors" && computerSelection === "Scissors")) {
-                let newPara = document.createElement("p");
-                newPara.textContent = "Round tied, pick again.";
-                scoreKeeper.appendChild(newPara);
+                tied();
         }
 
         let resetResults = function() {
