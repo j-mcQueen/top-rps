@@ -1,99 +1,98 @@
-// const game = function() {
-//     let playerScore = 0;
-//     let computerScore = 0;
+let playerScore = 0;
+let computerScore = 0;
 
-//     let i = 0;
-//     for (i = 0; i < 5; i++) {
-//         const computerPlay = function() {
-//             let choices = ["Rock", "Paper", "Scissors"];
-    
-//             return choices[Math.floor(Math.random() * choices.length)]; // Finds and returns the value of a random array item
-//         }
+const playRound = function(playerSelection, computerSelection) {
+        const scoreKeeper = document.querySelector("#results");
 
-        // const playerSelection = prompt("Choose between rock, paper and scissors:").toLowerCase();
-        // const computerSelection = computerPlay();
-    
-        // const playRound = function(playerSelection, computerSelection) {
+        if (playerSelection.getAttribute("id") === "player-rock" && computerSelection === "Scissors") {
+        playerScore += 1;
 
-        //     if (playerSelection === 'rock' && computerSelection === 'Scissors') {
-        //         playerScore += 1;
-    
-        //         console.log(`Rock beats scissors, the score is ${playerScore}-${computerScore} to the player.`);
-        //     } else if (computerSelection === 'Rock' && playerSelection === 'scissors') {
-        //         computerScore += 1;
-    
-        //         console.log(`Rock beats scissors, the score is ${playerScore}-${computerScore} to the computer.`);
-        //     }
-    
-        //     if (playerSelection === 'paper' && computerSelection === 'Rock') {
-        //         playerScore += 1;
-    
-        //         console.log(`Paper beats rock, the score is ${playerScore}-${computerScore} to player.`);
-        //     } else if (computerSelection === 'Paper' && playerSelection === 'rock') {
-        //         computerScore += 1;
-    
-        //         console.log(`Paper beats rock, the score is ${playerScore}-${computerScore} to the computer.`);
-        //     }
-    
-        //     if (playerSelection === 'scissors' && computerSelection === 'Paper') {
-        //         playerScore += 1;
-    
-        //         console.log(`Scissors beats paper, the score is ${playerScore}-${computerScore} to player.`);
-        //     } else if (computerSelection === 'Scissors' && playerSelection === 'paper') {
-        //         computerScore += 1;
-    
-        //         console.log(`Scissors beats paper, the score is ${playerScore}-${computerScore} to the computer.`);
-        //     }
-    
-        //     if (
-        //         (playerSelection === 'rock' && computerSelection === 'Rock') ||
-        //         (playerSelection === 'paper' && computerSelection === 'Paper') || 
-        //         (playerSelection === 'scissors' && computerSelection === 'Scissors')) {
-        //         console.log("Round tied! Play again.");
-        //     }
-        // }
+        let newPara = document.createElement("p");
+        newPara.textContent = `Rock beats scissors, the score is ${playerScore}-${computerScore}.`;
+        scoreKeeper.appendChild(newPara);
 
-        // const btn = document.querySelector(".player-buttons")
-        // const buttons = document.querySelectorAll(".player-buttons");
+        } else if (computerSelection === "Rock" && playerSelection.getAttribute("id") === "player-scissors") {
+        computerScore += 1;
 
-        // playerButtons.forEach(btn => btn.addEventListener("click", function() {
-        //     const computerPlay = function() {
-        //         let choices = ["Rock", "Paper", "Scissors"];
+        let newPara = document.createElement("p");
+        newPara.textContent = `Rock beats scissors, the score is ${playerScore}-${computerScore}.`;
+        scoreKeeper.appendChild(newPara);
+        }
 
-        //         return choices[Math.floor(Math.random() * choices.length)];
-        //     }
+        if (playerSelection.getAttribute("id") === "player-paper" && computerSelection === "Rock") {
+        playerScore += 1;
 
-        //     const computerSelection = computerPlay();
-        //     const playerSelection = btn;
+        let newPara = document.createElement("p");
+        newPara.textContent = `Paper beats rock, the score is ${playerScore}-${computerScore} to player.`;
+        scoreKeeper.appendChild(newPara);
 
-        //     playRound(playerSelection, computerSelection);
-        // }));
+        } else if (computerSelection === 'Paper' && playerSelection.getAttribute("id") === "player-rock") {
+        computerScore += 1;
 
-        // console.log(playRound(playerSelection, computerSelection));
+        let newPara = document.createElement("p");
+        newPara.textContent = `Paper beats rock, the score is ${playerScore}-${computerScore} to player.`;
+        scoreKeeper.appendChild(newPara);
+        }
 
-        // if (playerScore === 3) {
-        //     console.log("Player has reached 3 points, player wins! Refresh to play again.");
-        //     break;
-        // } else if  (computerScore === 3) {
-        //     console.log("Computer has reached 3 points, computer wins. Unlucky! Refresh to play again.");
-        //     break;
-        // } else if ((i >= 3) && (playerScore >= 0 && playerScore <= 2) && (computerScore >= 0 && computerScore <= 2)) {
-        //     console.log("Game over. No winner can be decided within 5 games. Refresh to play again!");
-        //     break; // A conditional that covers situations where many rounds have been tied.
-        // }
-//     }
-// }
+        if (playerSelection.getAttribute("id") === "player-scissors" && computerSelection === "Paper") {
+        playerScore += 1;
 
-// game();
+        let newPara = document.createElement("p");
+        newPara.textContent = `Scissors beats paper, the score is ${playerScore}-${computerScore}.`;
+        scoreKeeper.appendChild(newPara);
 
-// On click, store player choice in a variable and highlight choice
-// Then, run function which calculates computer choice.
-// Highlight computer choice and run a set of conditionals to check who wins the round
-// Create p element and add it to the div which displays the result of each round
-// First player to reach 3 points wins, ties result in a restart of the round
+        } else if (computerSelection === 'Scissors' && playerSelection.getAttribute("id") === "player-paper") {
+        computerScore += 1;
 
-// When a button is clicked, how do I get the computer to register that the button that was clicked is equal to playerSelection?
+        let newPara = document.createElement("p");
+        newPara.textContent = `Scissors beats paper, the score is ${playerScore}-${computerScore}.`;
+        scoreKeeper.appendChild(newPara);
+        }
 
-    // select all buttons, producing an array
-    // loop through the array and attach a click event listener to each array item (button) using forEach
-    // 
+        if (
+        (playerSelection.getAttribute("id") === "player-rock" && computerSelection === "Rock") ||
+        (playerSelection.getAttribute("id") === "player-paper" && computerSelection === "Paper") || 
+        (playerSelection.getAttribute("id") === "player-scissors" && computerSelection === "Scissors")) {
+                let newPara = document.createElement("p");
+                newPara.textContent = "Round tied, pick again.";
+                scoreKeeper.appendChild(newPara);
+        }
+
+        let resetResults = function() {
+                let resultsParas = document.querySelectorAll("#results p");
+
+                resultsParas.forEach(newPara => newPara.remove());
+        }
+
+        if (playerScore === 5) {
+                alert("You have reached 5 points, you win!!");
+
+                playerScore = 0;
+                computerScore = 0;
+
+                setTimeout(resetResults, 250);
+            } else if  (computerScore === 5) {
+                alert("Computer has reached 5 points, computer wins. Unlucky!");
+
+                playerScore = 0;
+                computerScore = 0;
+
+                setTimeout(resetResults, 250);
+            }
+}
+
+const btn = document.querySelector(".player-button")
+const buttons = document.querySelectorAll(".player-button");
+
+buttons.forEach(btn => btn.addEventListener("click", function(e) {
+        const computerPlay = function() {
+        let choices = ["Rock", "Paper", "Scissors"];
+
+        return choices[Math.floor(Math.random() * choices.length)];
+        }
+
+        const computerSelection = computerPlay();
+        const playerSelection = e.target;
+
+        playRound(playerSelection, computerSelection);
+}));
