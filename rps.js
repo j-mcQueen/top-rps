@@ -2,6 +2,34 @@ let playerScore = 0;
 let computerScore = 0;
 
 const playRound = function(playerSelection, computerSelection) {
+
+        const animateComputerButton = function(computerSelection, selectionElement) {
+                selectionElement.animate([
+                        { transform: "scale(1)" },
+                        { transform: "scale(1.2)" },
+                        { transform: "scale(1)" }
+                ], {
+                        duration: 500,
+                        iterations: 1
+        
+                        // animate() is experimental technology and not supported in IE. Check MDN for updates
+                });
+        }
+
+        if (computerSelection === "Rock") {
+                const selectionElement = document.querySelector("#computer-rock");
+
+                animateComputerButton(computerSelection, selectionElement);
+        } else if (computerSelection === "Paper") {
+                const selectionElement = document.querySelector("#computer-paper");
+
+                animateComputerButton(computerSelection, selectionElement);
+        } else if (computerSelection === "Scissors") {
+                const selectionElement = document.querySelector("#computer-scissors");
+
+                animateComputerButton(computerSelection, selectionElement);
+        }
+        
         const scoreKeeper = document.querySelector("#results");
 
         const playerRock = document.querySelector("#Rock").getAttribute("id");
