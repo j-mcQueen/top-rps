@@ -5,6 +5,10 @@ html {
     height: 100vh;
 }
 
+h1 {
+    font-size: 50px;
+}
+
 h1, h2, p {
     color: black;
     text-align: center;
@@ -31,7 +35,7 @@ button {
 }
 
 #player-options button:hover {
-    background-color: #f79d1e;
+    background-color: #E0C3FC;
     transition: 0.25s;
     cursor: pointer;
 }
