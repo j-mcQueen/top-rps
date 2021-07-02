@@ -26,17 +26,18 @@ h1, h2, p {
 
 button {
     padding: 50px;
-    background-color: inherit;
-    color: white;
-    border-radius: 10px;
-    border: 2px solid white;
+    margin: 5px;
+    background-color: #E0C3FC;
+    color: black;
+    border-radius: 5px;
+    border: 1px solid black;
     font-family: inherit;
     font-size: inherit;
 }
 
 #player-options button:hover {
-    background-color: #E0C3FC;
-    transition: 0.25s;
+    transform: scale(1.1);
+    transition: 0.2s;
     cursor: pointer;
 }
 
