@@ -71,6 +71,7 @@ button {
 #player-score p, #computer-score p {
     background-color: #E0C3FC;
     padding: 20px 25px;
+    width: 20px;
     margin: 0;
     border: 1px solid black;
     border-radius: 5px;
