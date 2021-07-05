@@ -1,9 +1,13 @@
 let playerScore = 0;
+let playerScorePara = document.querySelector("#player-score p");
+playerScorePara.textContent = "0";
 let computerScore = 0;
+let computerScorePara = document.querySelector("#computer-score p");
+computerScorePara.textContent = "0";
 
 const playRound = function(playerSelection, computerSelection) {
 
-        const animateComputerButton = function(computerSelection, selectionElement) {
+        const animateComputerButton = function(selection, selectionElement) {
                 selectionElement.animate([
                         { transform: "scale(1)" },
                         { transform: "scale(1.2)" },
@@ -30,7 +34,7 @@ const playRound = function(playerSelection, computerSelection) {
                 animateComputerButton(computerSelection, selectionElement);
         }
         
-        const scoreKeeper = document.querySelector("#results");
+        const scoreKeeper = document.querySelector("#output");
 
         const playerRock = document.querySelector("#Rock").getAttribute("id");
         const playerPaper = document.querySelector("#Paper").getAttribute("id");
@@ -38,7 +42,7 @@ const playRound = function(playerSelection, computerSelection) {
 
         const roundWinner = function(winner, loser) {
                 let newPara = document.createElement("p");
-                newPara.textContent = `${winner} beats ${loser}, the score is ${playerScore}-${computerScore}.`;
+                newPara.textContent = `${winner} beats ${loser}.`;
                 scoreKeeper.appendChild(newPara);
         }
 
@@ -50,33 +54,39 @@ const playRound = function(playerSelection, computerSelection) {
 
         if (playerSelection.getAttribute("id") === "Rock" && computerSelection === "Scissors") {
                 playerScore += 1;
+                playerScorePara.textContent = playerScore;
 
                 roundWinner(playerRock, computerSelection);
 
         } else if (computerSelection === "Rock" && playerSelection.getAttribute("id") === "Scissors") {
                 computerScore += 1;
+                computerScorePara.textContent = computerScore;
 
                 roundWinner(computerSelection, playerScissors);
         }
 
         if (playerSelection.getAttribute("id") === "Paper" && computerSelection === "Rock") {
                 playerScore += 1;
+                playerScorePara.textContent = playerScore;
 
                 roundWinner(playerPaper, computerSelection);
 
         } else if (computerSelection === 'Paper' && playerSelection.getAttribute("id") === "Rock") {
                 computerScore += 1;
+                computerScorePara.textContent = computerScore;
 
                 roundWinner(computerSelection, playerRock);
         }
 
         if (playerSelection.getAttribute("id") === "Scissors" && computerSelection === "Paper") {
                 playerScore += 1;
+                playerScorePara.textContent = playerScore;
 
                 roundWinner(playerScissors, computerSelection);
 
         } else if (computerSelection === 'Scissors' && playerSelection.getAttribute("id") === "Paper") {
                 computerScore += 1;
+                computerScorePara.textContent = computerScore;
 
                 roundWinner(computerSelection, playerPaper);
         }
@@ -89,7 +99,12 @@ const playRound = function(playerSelection, computerSelection) {
         }
 
         let resetResults = function() {
-                let resultsParas = document.querySelectorAll("#results p");
+                playerScore = 0;
+                playerScorePara.textContent = "0";
+                computerScore = 0;
+                computerScorePara.textContent = "0";
+
+                let resultsParas = document.querySelectorAll("#output p");
 
                 resultsParas.forEach(newPara => newPara.remove());
         }
@@ -97,18 +112,14 @@ const playRound = function(playerSelection, computerSelection) {
         if (playerScore === 5) {
                 alert("You have reached 5 points, you win!!");
 
-                playerScore = 0;
-                computerScore = 0;
-
                 setTimeout(resetResults, 250);
             } else if  (computerScore === 5) {
                 alert("Computer has reached 5 points, computer wins. Unlucky!");
 
-                playerScore = 0;
-                computerScore = 0;
-
                 setTimeout(resetResults, 250);
             }
+        
+            // ensures no refresh is necessary to play again 
 }
 
 const btn = document.querySelector(".player-button")
@@ -126,3 +137,14 @@ buttons.forEach(btn => btn.addEventListener("click", function(e) {
 
         playRound(playerSelection, computerSelection);
 }));
+
+// Add divs in HTML displaying player score and computer score
+// On round win, get value of the div and convert it to a number
+
+//      let playerScore = document.querySelector("#player-score").value;
+
+//      let playerNewScore = Number(playerScore) + 1;
+//      
+//      playerScore = playerNewScore;
+// Add 1 to the number and store in a variable
+// Replace the value of the button with the variable containing the new number
