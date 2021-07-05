@@ -7,7 +7,7 @@ computerScorePara.textContent = "0";
 
 const playRound = function(playerSelection, computerSelection) {
 
-        const animateComputerButton = function(selection, selectionElement) {
+        const animateComputerButton = function(selectionElement) {
                 selectionElement.animate([
                         { transform: "scale(1)" },
                         { transform: "scale(1.2)" },
@@ -23,15 +23,15 @@ const playRound = function(playerSelection, computerSelection) {
         if (computerSelection === "Rock") {
                 const selectionElement = document.querySelector("#computer-rock");
 
-                animateComputerButton(computerSelection, selectionElement);
+                animateComputerButton(selectionElement);
         } else if (computerSelection === "Paper") {
                 const selectionElement = document.querySelector("#computer-paper");
 
-                animateComputerButton(computerSelection, selectionElement);
+                animateComputerButton(selectionElement);
         } else if (computerSelection === "Scissors") {
                 const selectionElement = document.querySelector("#computer-scissors");
 
-                animateComputerButton(computerSelection, selectionElement);
+                animateComputerButton(selectionElement);
         }
         
         const scoreKeeper = document.querySelector("#output");
