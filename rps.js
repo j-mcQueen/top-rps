@@ -137,14 +137,3 @@ buttons.forEach(btn => btn.addEventListener("click", function(e) {
 
         playRound(playerSelection, computerSelection);
 }));
-
-// Add divs in HTML displaying player score and computer score
-// On round win, get value of the div and convert it to a number
-
-//      let playerScore = document.querySelector("#player-score").value;
-
-//      let playerNewScore = Number(playerScore) + 1;
-//      
-//      playerScore = playerNewScore;
-// Add 1 to the number and store in a variable
-// Replace the value of the button with the variable containing the new number
