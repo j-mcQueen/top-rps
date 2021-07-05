@@ -76,6 +76,10 @@ button {
     border-radius: 5px;
 }
 
+#output p {
+    font-size: 16px;
+}
+
 #computer-score {
     justify-self: end;
 }
