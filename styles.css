@@ -6,6 +6,10 @@ html {
     font-size: 10px;
 }
 
+body {
+    margin: 0;
+}
+
 h1 {
     font-size: 48px;
 }
@@ -88,4 +92,25 @@ button {
 #computer-options {
     grid-column: 3;
     justify-self: start;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    background-color: #E8E3CC;
+    border-radius: 0 5px 0 0;
+    padding: 14px;
+    font-size: 14px;
+    text-align: center;
+}
+
+footer a {
+    display: inline-block;
+    text-decoration: none;
+    color: #DB3F29;
+}
+
+footer a:hover {
+    color: #0B1F65;
+    transition: 0.4s;
 }
