@@ -1,5 +1,5 @@
 This project was developed as part of The Odin Project's Foundations course. 
-Check out my [live version](https://silverwish.github.io/top-rps/) of the game.
+Check out my [live version](https://j-mcQueen.github.io/top-rps/) of the game.
 
 ## About this project
 
